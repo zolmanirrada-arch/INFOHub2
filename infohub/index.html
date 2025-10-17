@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>INFOHub — Информатикадан көмек</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #f2faff, #f6f8fb);
+      margin: 0;
+      color: #333;
+    }
+
+    /* ——— Header ——— */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 50px;
+      background: #004aad;
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      background: #fff;
+      color: #004aad;
+      font-weight: 700;
+      font-size: 22px;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+    .brand-title { font-size: 20px; font-weight: bold; }
+    .brand-sub { font-size: 12px; opacity: 0.8; }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover, nav a.active { text-decoration: underline; }
+
+    .cta {
+      background: #fff;
+      color: #004aad;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .cta:hover { background: #f0f4ff; }
+
+    /* ——— Hero Section ——— */
+    main {
+      text-align: center;
+      margin-top: 80px;
+      padding: 40px 20px;
+    }
+    .hero {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 50px;
+      border-radius: 25px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .hero h1 {
+      color: #004aad;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background: #004aad;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #0059d4; }
+
+    /* ——— Services Preview ——— */
+    .services-preview {
+      margin-top: 100px;
+      text-align: center;
+    }
+    .services-preview h2 {
+      color: #004aad;
+      margin-bottom: 30px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 25px;
+      transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    /* ——— Teacher Section ——— */
+    .teacher {
+      margin-top: 100px;
+      background: #eaf0ff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .teacher img {
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+    }
+    .teacher h3 {
+      color: #004aad;
+      margin-bottom: 5px;
+    }
+    .teacher p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ——— Reviews Section ——— */
+    .reviews {
+      margin-top: 80px;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .reviews h2 {
+      color: #004aad;
+      margin-bottom: 30px;
+    }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .review {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-style: italic;
+    }
+    .review span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #004aad;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #777;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><b>IH</b></div>
+      <div>
+        <div class="brand-title">INFOHub</div>
+        <div class="brand-sub">Информатика бойынша онлайн көмек</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html" class="active">Басты</a>
+      <a href="services.html">Қызметтер</a>
+      <a href="pricing.html">Бағалар</a>
+      <a href="contact.html">Байланыс</a>
+    </nav>
+    <a class="cta" href="contact.html">Тапсырыс беру</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Информатикадан қосымша көмек пен түсіндіру</h1>
+      <p>Қиын тақырыптарды қарапайым тілмен түсіндіреміз және тапсырмаларды бірге орындаймыз.  
+      <b>Google Classroom</b> пен <b>Telegram</b> арқылы ыңғайлы байланыс орнатамыз.</p>
+      <a class="btn" href="contact.html">Тапсырыс беру</a>
+    </section>
+
+    <section class="services-preview">
+      <h2>Біздің бағыттар</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.AheEfyFsW5H8KQmdEegq5wHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Онлайн сабақтар">
+          <h3>Онлайн сабақтар</h3>
+          <p>Күрделі тақырыптарды талдау және практикалық мысалдармен түсіндіру.</p>
+        </div>
+        <div class="card">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.bvvhov3JjjxVKnIUCwcopQHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Тапсырма көмегі">
+          <h3>Тапсырма бойынша көмек</h3>
+          <p>Мектеп, колледж және ЖОО деңгейіндегі тапсырмаларды орындауға жәрдем.</p>
+        </div>
+        <div class="card">
+          <img src="https://eng.skillbox.ru/_next/image?url=https:%2F%2Fwanting-tested-vessel.media.strapiapp.com%2F42114231_8910488_9c6b4c3b1b.jpg&w=2048&q=75" alt="Емтиханға дайындық">
+          <h3>Емтиханға дайындық</h3>
+          <p>Тест сұрақтары мен практикалық есептер арқылы дайындық жүргізу.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="teacher">
+      <img src="about me.png" alt="Мұғалім суреті">
+      <h3>Мұғалім туралы</h3>
+      <p>Сайт негізін қалаушы және информатика пәнінің маманы — <b>Иррада Жолман</b>.  
+      3 жылдық тәжірибесі бар, оқушылар мен студенттерге бағдарламалау, Office, алгоритмдер және компьютерлік сауат бойынша түсіндіру сабақтарын өткізеді.</p>
+    </section>
+	<section class="teacher">
+      <img src="Uldar.png" >
+      <h3>Мұғалім туралы</h3>
+      <p>Сайт негізін қалаушы және информатика пәнінің маманы — <b>Дөненбай Ұлдар</b>.  
+      3 жылдық тәжірибесі бар, оқушылар мен студенттерге бағдарламау тілдері мен жасанды интеллект бойынша түсіндіру сабақтарын өткізеді.</p>
+    </section>
+
+    <section class="reviews">
+      <h2>Пікірлер</h2>
+      <div class="review-grid">
+        <div class="review">
+          “Түсіндіруі өте қарапайым әрі нақты! Тапсырмамды тез орындап берді.”
+          <span>— Айжан, 11 сынып</span>
+        </div>
+        <div class="review">
+          “INFOHub арқылы информатикадан қорқынышым басылды. ҰБТ-ға жақсы дайындалдым!”
+          <span>— Данияр, түлек</span>
+        </div>
+        <div class="review">
+          “Керемет сервис! Telegram арқылы байланысу ыңғайлы, мұғалім әрқашан көмектеседі.”
+          <span>— Әлия, студент</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 INFOHub • Барлық құқық қорғалған</footer>
+</body>
+</html>

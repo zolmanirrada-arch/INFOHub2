@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Байланыс — INFOHub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #f2faff, #f6f8fb);
+      margin: 0;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 50px;
+      background: #004aad;
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      background: #fff;
+      color: #004aad;
+      font-weight: 700;
+      font-size: 22px;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .brand-title { font-size: 20px; font-weight: bold; }
+    .brand-sub { font-size: 12px; opacity: 0.8; }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #004aad;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      width: 100%;
+    }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    .btn {
+      background: #004aad;
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: #0059d4;
+    }
+
+    .qr-box {
+      text-align: center;
+      margin-top: 30px;
+      background: #f8f8f8;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">ПК</div>
+      <div>
+        <div class="brand-title">INFOHub</div>
+        <div class="brand-sub">Информатика бойынша онлайн көмек</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Басты</a>
+      <a href="services.html">Қызметтер</a>
+      <a href="pricing.html">Бағалар</a>
+      <a href="contact.html" class="active">Байланыс</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Байланыс</h1>
+    <p style="text-align:center;">Сұрақтарыңыз немесе тапсырыс беру үшін Telegram арқылы байланысыңыз:</p>
+    <div style="text-align:center;">
+      <a class="btn" href="https://t.me/Irrada" target="_blank">Telegram арқылы жазу</a>
+    </div>
+
+    <h3 style="margin-top:30px;">Онлайн тапсырыс формасы</h3>
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Аты-жөні *" required>
+      <input type="text" id="subject" placeholder="Пән (мысалы, информатика) *" required>
+      <input type="text" id="ref" placeholder="Тапсырма нөмірі *" required>
+      <textarea id="desc" placeholder="Қысқаша сипаттама"></textarea>
+      <button type="submit" class="btn">Жіберу</button>
+    </form>
+
+    <div class="qr-box">
+      <h3>Kaspi QR арқылы төлем</h3>
+      <p>Төлем жасау үшін QR кодты сканерлеңіз:</p>
+      <img src="https://images.satu.kz/183226187_w640_h640_modul-oplaty-kaspi.jpg" alt="Kaspi QR" width="200" height="200" style="border-radius:10px;">
+      <p>Немесе <a href="#" style="color:#004aad;">Kaspi төлем сілтемесіне өтіңіз</a></p>
+    </div>
+  </main>
+
+  <footer>© INFOHub • Барлық құқықтар қорғалған</footer>
+
+  <script>
+    // Telegram кері байланыс (егер нақты бот API болса, сонда да қосуға болады)
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const subject = document.getElementById('subject').value;
+      const ref = document.getElementById('ref').value;
+      const desc = document.getElementById('desc').value;
+
+      const message = `📩 Жаңа тапсырыс:\n👤 Аты-жөні: ${name}\n📘 Пән: ${subject}\n🔢 Нөмір: ${ref}\n📝 Сипаттама: ${desc}`;
+      const telegramUrl = `https://t.me/Irrada?text=${encodeURIComponent(message)}`;
+
+      window.open(telegramUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
